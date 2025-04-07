@@ -15,14 +15,17 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    // Form-level validation with user-friendly messages
     if (!name.trim() || !email.trim() || !message.trim()) {
-      setError('All fields are required.')
+      setError('All fields are required. Please fill in the missing details.')
+      setSuccess('')
       return
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address.')
+      setSuccess('')
       return
     }
 
@@ -41,7 +44,7 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
         setName('')
         setEmail('')
         setMessage('')
-        onFeedbackSubmitted() // Trigger a refresh for the admin view
+        onFeedbackSubmitted() // Trigger refresh in admin view
       } else {
         setError('Submission failed. Please try again.')
       }
@@ -53,7 +56,7 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow rounded p-6">
+    <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow rounded p-6 transition-colors duration-300">
       <h2 className="text-xl font-bold mb-4">Submit Your Feedback</h2>
       <div className="mb-4">
         <label htmlFor="name" className="block mb-1 font-medium">Full Name</label>
@@ -63,7 +66,7 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
           placeholder="Your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
         />
       </div>
       <div className="mb-4">
@@ -74,7 +77,7 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
         />
       </div>
       <div className="mb-4">
@@ -84,16 +87,16 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
           placeholder="Your feedback"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
           rows={4}
         ></textarea>
       </div>
-      {error && <p className="text-red-500 mb-2">{error}</p>}
-      {success && <p className="text-green-500 mb-2">{success}</p>}
+      {error && <p className="text-red-500 mb-2 transition-opacity duration-300">{error}</p>}
+      {success && <p className="text-green-500 mb-2 transition-opacity duration-300">{success}</p>}
       <button
         type="submit"
         disabled={loading}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
       >
         {loading ? 'Submitting...' : 'Submit Feedback'}
       </button>

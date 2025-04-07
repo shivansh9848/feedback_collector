@@ -10,6 +10,7 @@
     "netlify:deploy:prod": "netlify deploy --prod"
   },
   "dependencies": {
+    "@netlify/next": "^1.4.9",
     "@netlify/plugin-nextjs": "^5.10.4",
     "@radix-ui/react-slot": "^1.1.2",
     "@tanstack/react-table": "^8.21.2",

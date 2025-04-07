@@ -48,7 +48,7 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
       } else {
         setError('Submission failed. Please try again.')
       }
-    } catch (err) {
+    } catch{
       setError('Submission failed. Please try again.')
     } finally {
       setLoading(false)

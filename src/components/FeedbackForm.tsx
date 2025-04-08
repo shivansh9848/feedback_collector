@@ -1,10 +1,8 @@
 import { useState, FormEvent } from 'react'
 
-type FeedbackFormProps = {
-  onFeedbackSubmitted: () => void
-}
 
-export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps) {
+
+export default function FeedbackForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -44,7 +42,7 @@ export default function FeedbackForm({ onFeedbackSubmitted }: FeedbackFormProps)
         setName('')
         setEmail('')
         setMessage('')
-        onFeedbackSubmitted() // Trigger refresh in admin view
+        // onFeedbackSubmitted() // Trigger refresh in admin view
       } else {
         setError('Submission failed. Please try again.')
       }

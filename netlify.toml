@@ -4,7 +4,7 @@
   functions = "netlify/functions"
 
 [[plugins]]
-  package = "@netlify/next"
+  package = "@netlify/plugin-nextjs"
 
 [dev]
   functions = "netlify/functions"

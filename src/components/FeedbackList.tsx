@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Feedback } from '@/types/feedback'
 
-type FeedbackListProps = {
-  refreshFlag: number
-}
 
-export default function FeedbackList({ refreshFlag }: FeedbackListProps) {
+export default function FeedbackList() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([])
 
   const fetchFeedbacks = async () => {
@@ -20,7 +17,7 @@ export default function FeedbackList({ refreshFlag }: FeedbackListProps) {
 
   useEffect(() => {
     fetchFeedbacks()
-  }, [refreshFlag])
+  }, [])
 
   return (
     <div className="mt-6 transition-opacity duration-300">

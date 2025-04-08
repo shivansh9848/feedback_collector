@@ -1,9 +1,7 @@
 // page.tsx
 'use client'
 
-import { useState } from 'react';
 import FeedbackForm from '@/components/FeedbackForm';
-import FeedbackList from '@/components/FeedbackList';
 
 export default function Home() {
 //   const [showFeedbacks, setShowFeedbacks] = useState(false);

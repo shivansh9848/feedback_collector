@@ -1,7 +1,5 @@
+'use client'
 import { useState, FormEvent } from 'react'
-
-
-
 export default function FeedbackForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -13,7 +11,7 @@ export default function FeedbackForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // Form-level validation with user-friendly messages
+    
     if (!name.trim() || !email.trim() || !message.trim()) {
       setError('All fields are required. Please fill in the missing details.')
       setSuccess('')
@@ -42,7 +40,7 @@ export default function FeedbackForm() {
         setName('')
         setEmail('')
         setMessage('')
-        // onFeedbackSubmitted() // Trigger refresh in admin view
+        
       } else {
         setError('Submission failed. Please try again.')
       }

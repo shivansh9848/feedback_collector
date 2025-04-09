@@ -1,8 +1,10 @@
+'use client'
 import { useState, useEffect } from 'react'
 import { Feedback } from '@/types/feedback'
 
 
-export default function FeedbackList() {
+export default  function FeedbackList() {
+   
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([])
 
   const fetchFeedbacks = async () => {
@@ -21,7 +23,6 @@ export default function FeedbackList() {
 
   return (
     <div className="mt-6 transition-opacity duration-300">
-      <h2 className="text-xl font-bold mb-4">Submitted Feedbacks</h2>
       {feedbacks.length === 0 ? (
         <p className="text-gray-500">No feedback submitted yet.</p>
       ) : (

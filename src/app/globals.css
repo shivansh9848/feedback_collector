@@ -123,3 +123,9 @@
 button {
     cursor: pointer;
   }
+  /* In your global CSS file */
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  

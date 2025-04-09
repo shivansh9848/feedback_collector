@@ -1,4 +1,4 @@
-// context/DarkModeContext.tsx
+
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
@@ -23,9 +23,9 @@ interface DarkModeProviderProps {
 }
 
 export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
-  // Update the html element when isDark changes.
+  
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');

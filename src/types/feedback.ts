@@ -1,4 +1,4 @@
-// src/types/feedback.ts
+
 
 export type Feedback = {
     id: number
@@ -6,5 +6,4 @@ export type Feedback = {
     email: string
     message: string
     timestamp: string
-  }
-  
+}

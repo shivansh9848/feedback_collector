@@ -62,21 +62,6 @@ export const handler: Handler = async (event: HandlerEvent, context: HandlerCont
                 body: JSON.stringify(newFeedback),
             }
         }
-        else if (event.httpMethod === 'DELETE') {
-            try {
-                fs.writeFileSync(filePath, JSON.stringify([], null, 2))
-
-                return {
-                    statusCode: 200,
-                    body: JSON.stringify({ message: 'All feedbacks cleared.' })
-                }
-            } catch (error) {
-                return {
-                    statusCode: 500,
-                    body: JSON.stringify({ error: 'Failed to clear feedbacks' })
-                }
-            }
-        }
         else {
 
             return {

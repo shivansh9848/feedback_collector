@@ -31,7 +31,7 @@ export default function FeedbackForm() {
     setLoading(true)
 
     try {
-      const res = await fetch('/.netlify/functions/submit-feedback', {
+      const res = await fetch('/.netlify/functions/feedbacks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message })

@@ -12,7 +12,6 @@ This repository contains a feedback form application built using **Next.js 13**,
 4. [Getting Started](#getting-started)
 5. [Available Scripts](#available-scripts)
 6. [Deployment](#deployment)
-7. [License](#license)
 
 ---
 
@@ -25,7 +24,6 @@ The application consists of a **front-end** where users can:
 On the **back-end**, Netlify functions handle:
 - Saving feedback data to an ephemeral JSON file.
 - Retrieving existing feedback for display.
-- Clearing all feedback (optional).
 
 Since Netlify functions store data in the `/tmp` directory, the stored feedback is **not persistent** across redeployments or function cold starts. For a production-ready environment, consider an external database.
 
@@ -105,13 +103,13 @@ Since Netlify functions store data in the `/tmp` directory, the stored feedback 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/<your-username>/<your-repo>.git
+   git clone https://github.com/shivansh9848/feedback_collector.git
    ```
 
 2. **Navigate into the project directory:**
 
    ```bash
-   cd <your-repo>
+   cd feedback_collector
    ```
 
 3. **Install dependencies:**
